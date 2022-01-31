@@ -1,0 +1,237 @@
+.footer{
+    z-index: 6;
+    position: relative;
+    &__container{
+        position: relative;
+    }
+    &__top{
+        background: #2A2829;
+        box-sizing: border-box;
+        padding: toRemM(4) 0 toRemM(12);
+    }
+    &__nav-wrapper{
+        max-width: toRemM(380);
+    }
+    &__section{
+
+        box-sizing: border-box;
+        padding: toRemM(12) 0;
+        &+.footer__section{
+            border-top: 1px solid rgba($gray2, 0.3);
+            box-sizing: border-box;
+        }
+    }
+    &__item{
+        display: inline-block;
+        vertical-align: top;
+        line-height: toRemM(48);
+        font-size: toRemM(16);
+        width: toRemM(130);
+        color: #fff;
+        &--yellow{
+            color: $yellow;
+        }
+        &--left{
+            width: toRemM(180);
+        }
+        &--gray{
+            color: $gray4;
+        }
+    }
+    &__bottom{
+        background: $gray1;
+        box-sizing: border-box;
+        padding: toRemM(32) 0 toRemM(24);
+    }
+    p{
+        font-size: toRemM(16);
+        line-height: toRemM(22);
+        color: $gray3;
+        margin-bottom: toRemM(20);
+        @media (max-width: 1199px) {
+            max-width: toRemM(200);
+        }
+    }
+    &__phone,&__email{
+        display: block;
+        margin-bottom: toRemM(16);
+        color: #ffffff;
+        font-size: toRemM(20);
+        line-height: toRemM(28);
+    }
+    &__address{
+        font-size: toRemM(14);
+        line-height: toRemM(20);
+        color: $gray3;
+        margin-bottom: toRemM(24);
+    }
+    &__form{
+        border-top: 1px solid rgba($gray2, 0.3);
+        box-sizing: border-box;
+        padding-top: toRemM(32);
+        margin-bottom: toRemM(32);
+        span{
+            max-width: toRemM(220);
+            font-size: toRemM(10);
+            line-height: toRemM(14);
+            color: rgba($gray2,0.5);
+            margin-top: toRemM(8);
+            display: block;
+        }
+    }
+    &__politics{
+        img{
+            display: block;
+            width: toRemM(144);
+            height: toRemM(48);
+            margin-bottom: toRemM(16);
+        }
+        span{
+            margin-right: toRemM(20);
+        }
+        span,a{
+            font-size: toRemM(14);
+            line-height: toRemM(20);
+            color: $gray2;
+            display: inline-block;
+            vertical-align: bottom;
+        }
+    }
+    @media (min-width: 1000px) {
+        p{
+            max-width: none;
+        }
+        &__address{
+            max-width: toRemM(280);
+        }
+        &__form{
+            position: absolute;
+            top: 0;
+            right: 4%;
+            padding-top: 0;
+            border: none;
+            @media (min-width: 1840px) {
+                right: 0;
+            }
+        }
+        &__politics{
+            img{
+                display: inline-block;
+                vertical-align: top;
+                margin-right: toRemM(40);
+                width: toRemM(64);
+                height: toRemM(21);
+                margin-top: -(toRemM(3));
+                margin-bottom: 0;
+            }
+            span{
+                margin-right: toRemM(32);
+            }
+        }
+        &__section{
+            box-sizing: border-box;
+            padding: toRemM(24) 0;
+            display: inline-block;
+            vertical-align: middle;
+            &+.footer__section{
+                border-top: none;
+                box-sizing: border-box;
+            }
+        }
+        &__top{
+            padding: 0;
+        }
+        &__nav-wrapper{
+            max-width: none;
+        }
+        &__item{
+            display: inline-block;
+            vertical-align: top;
+            line-height: toRemM(20);
+            font-size: toRemM(14);
+            width: auto;
+            color: #fff;
+            margin-right: toRemM(32);
+            &--border-left{
+                padding-left: toRemM(32);
+                border-left: 1px solid $gray1;
+            }
+            &--absolute{
+                position: absolute;
+                right: 4%;
+                top: 50%;
+                margin-right: 0 !important;
+                transform: translate(0,-50%);
+                @media (min-width: 1840px) {
+                    right: 0;
+                }
+            }
+            &--yellow{
+                color: $yellow;
+            }
+            &--left{
+                width: auto;
+            }
+        }
+    }
+    @media (min-width: 1200px) {
+        &__section{
+            padding: toRem(24) 0;
+        }
+        &__item{
+            line-height: toRem(20);
+            font-size: toRem(14);
+            margin-right: toRem(32);
+            &--border-left{
+                padding-left: toRem(32);
+            }
+        }
+        &__bottom{
+            padding: toRem(24) 0 toRem(24);
+        }
+        p{
+            font-size: toRem(16);
+            line-height: toRem(22);
+            margin-bottom: toRem(16);
+        }
+        &__email{
+            margin-bottom: toRem(16);
+            font-size: toRem(38);
+            line-height: toRem(48);
+        }
+        &__phone{
+            margin-bottom: toRem(16);
+            font-size: toRem(20);
+            line-height: toRem(28);
+        }
+        &__address{
+            font-size: toRem(14);
+            line-height: toRem(20);
+            max-width: toRem(290);
+            margin-bottom: toRem(54);
+        }
+        &__form{
+            span{
+                max-width: toRem(220);
+                font-size: toRem(10);
+                line-height: toRem(14);
+                margin-top: toRem(8);
+            }
+        }
+        &__politics{
+            img{
+                margin-right: toRem(40);
+                width: toRem(64);
+                height: toRem(21);
+                margin-top: -(toRem(3));
+            }
+            span{
+                margin-right: toRem(32);
+            }
+            span,a{
+                font-size: toRem(14);
+                line-height: toRem(20);
+            }
+        }
+    }
+}

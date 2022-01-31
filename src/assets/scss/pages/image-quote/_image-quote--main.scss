@@ -1,0 +1,12 @@
+.image-quote{
+    &__shadow{
+        //transition: opacity .3s ease;
+    }
+    img{
+        //transition: opacity .3s ease;
+    }
+    h3{
+        transition: .1s ease;
+        transition-property: transform, opacity;
+    }
+}

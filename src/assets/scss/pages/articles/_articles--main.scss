@@ -1,0 +1,8 @@
+.articles{
+    &__button{
+        transition-property: background-color, border-color, opacity;
+    }
+}
+@media (min-width: 1200px) {
+
+}

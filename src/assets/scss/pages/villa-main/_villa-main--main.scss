@@ -1,0 +1,58 @@
+.villa-main{
+    &__background{
+        &::before{
+            transition: opacity .5s ease
+        }
+    }
+    &__slide{
+        transition: opacity .5s ease;
+    }
+    @media (min-width: 1200px) {
+        &__content{
+            opacity: 0;
+            transform: translate(0,-50%) translateY(20px);
+            &.transition{
+                transition: .4s ease 1.2s;
+                transition-property: transform, opacity;
+            }
+        }
+        &__slide{
+            cursor: pointer;
+            opacity: 1;
+            left: 70%;
+            &.static{
+                position: absolute;
+                opacity: 0;
+                transition:opacity 0s linear 2s;
+            }
+            &.active{
+                .villa-main{
+                    &__content{
+                        opacity: 1;
+                        transform: translate(0,-50%) translateY(0);
+                    }
+                }
+            }
+            &.hide{
+                .villa-main{
+                    &__content{
+                        &.transition{
+                            animation: hide .4s ease;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes hide {
+    0%{
+        opacity: 1;
+        transform: translate(0,-50%) translateY(0);
+    }
+    100%{
+        opacity: 0;
+        transform: translate(0,-50%) translateY(-20px);
+    }
+}

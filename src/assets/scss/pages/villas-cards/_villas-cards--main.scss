@@ -1,0 +1,376 @@
+.villas-cards{
+    padding: toRemM(72) 0 toRemM(40);
+    overflow: hidden;
+    &--gray{
+        background-color: $gray4;
+    }
+    &--white{
+        background-color: #fff;
+    }
+    &__title{
+        margin-bottom: toRemM(56);
+        white-space: normal;
+    }
+    &__text{
+        margin-bottom: toRemM(48);
+    }
+    &__tab{
+        opacity: 0;
+        pointer-events: none;
+        padding-bottom: 20px;
+        margin-bottom: -20px;
+        &:not(.active){
+            & *{
+                pointer-events: none;
+            }
+        }
+        
+        &--absoluted{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+        }
+        & > .swiper-wrapper{
+            padding: 0 6.25%;
+            max-width: 1720px;
+            margin: 0 auto;
+            box-sizing: border-box;
+            @media (min-width: 1200px) {
+                padding: 0 toRem(95);
+            }
+            @media (min-width: 1440px) {
+                max-width: 1200px;
+            }
+            @media (min-width: 1550px) {
+                max-width: 1400px;
+            }
+            @media (min-width: 1800px) {
+                max-width: 1580px;
+                padding: 0;
+            }
+        }
+        &.active{
+            opacity: 1;
+            pointer-events: all;
+            .villas-cards{
+                &__item{
+                    opacity: 1;
+                    transform: translate(0,0);
+                }
+            }
+        }
+    }
+    &__tabs{
+        position: relative;
+    }
+    &__toggles{
+        margin-bottom: toRemM(24);
+        white-space: nowrap;
+    }
+    &__item{
+        opacity: 0;
+        transform: translate(0,20px);
+    }
+    &__button{
+        display: inline-block;
+        margin-top: toRemM(32);
+    }
+    @media (min-width: 1200px) {
+        padding: toRem(160) 0 toRem(96);
+        &__title{
+            margin-bottom: toRem(72);
+            h2{
+                white-space: nowrap;
+            }
+        }
+        &__text{
+            margin-bottom: toRem(105);
+        }
+        &__toggles{
+            padding-top: toRemM(10);
+            margin-top: -(toRemM(10));
+        }
+        &__button{
+            margin-top: toRem(48);
+        }
+    }
+}
+
+.villa-card{
+    width: toRemM(280);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.08);
+    background-color: #fff;
+    &__photos{
+        height: toRemM(160);
+        .swiper-pagination{
+            position: absolute;
+            left: 50%;
+            bottom: toRemM(12);
+            transform: translate(-50%,0);
+            
+        }
+    }
+    &__photo{
+        height: 100%;
+        position: relative;
+        width: 100%;
+        img{
+            position: absolute;
+            top: 0;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: 100%;
+            opacity: 0;
+            transform: translate(-50%,-10px) scale(1.05);
+            &.swiper-lazy-loaded{
+                opacity: 1;
+                transform: translate(-50%,0) scale(1);
+            }
+        }
+    }
+    &__button{
+        display: inline-block;
+    }
+    &__description{
+        padding: toRemM(16) toRemM(16) toRemM(20) toRemM(16);
+        height: toRemM(171);
+        box-sizing: border-box;
+    }
+    &__name{
+        font-size: toRemM(20);
+        line-height: toRemM(28);
+        margin-bottom: toRemM(4);
+        color: #000;
+        font-family: bold;
+    }
+    &__tags{
+        margin-right: -(toRemM(12));
+        margin-bottom: toRemM(24);
+    }
+    &__tag{
+        display: inline-block;
+        vertical-align: middle;
+        font-size: toRemM(14);
+        line-height: toRemM(20);
+        color: $gray2;
+        margin-right: toRemM(12);
+        position: relative;
+        &::before{
+            left: 100%;
+            content: '•';
+            top: 50%;
+            transform: translate(0,-50%);
+            position: absolute;
+            margin-left: toRemM(3);
+        }
+        &:last-child{
+            &::before{
+                display: none;
+            }
+        }
+    }
+    &__right{
+        font-size: 0;
+    }
+    &__prices{
+        width: 50%;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    &__button{
+        display: inline-block;
+        vertical-align: middle;
+        width: 50%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    &__price{
+        &--bold{
+            font-size: toRemM(20);
+            line-height: toRemM(28);
+            color: $green;
+            font-family: bold;
+        }
+        &--discount{
+            font-size: toRemM(14);
+            line-height: toRemM(14);
+            color: $red;
+            position: relative;
+            display: inline-block;
+            &::before{
+                content: '';
+                left: 0;
+                right: 0;
+                top: 50%;
+                transform: translate(0,-50%);
+                background-color: $red;
+                height: 1px;
+                position: absolute;
+            }
+        }
+    }
+    &__discount{
+        position: absolute;
+        top: toRemM(12);
+        left: toRemM(16);
+        color: #fff;
+        background-color: $red;
+        font-size: toRemM(12);
+        line-height: toRemM(14);
+        padding: toRemM(4) toRemM(8);
+        z-index: 1;
+    }
+    @media (min-width: 1200px) {
+        width: toRem(460);
+        &__photos{
+            height: toRem(256);
+            .swiper-pagination{
+                bottom: toRem(16);
+                opacity: 0;
+                pointer-events: none;
+            }
+        }
+        &__description{
+            padding: toRem(24);
+            height: toRem(132);
+            font-size: 0;
+        }
+        &__name{
+            font-size: toRem(20);
+            line-height: toRem(28);
+            margin-bottom: toRem(16);
+        }
+        &__tags{
+            margin-right: -(toRem(12));
+            margin-bottom: 0;
+        }
+        &__tag{
+            font-size: toRem(14);
+            line-height: toRem(20);
+            margin-right: toRem(12);
+            &::before{
+                margin-left: toRem(3);
+            }
+        }
+        &__right{
+            width: 40%;
+            text-align: right;
+            display: inline-block;
+            vertical-align: top;
+        }
+        &__left{
+            width: 60%;
+            display: inline-block;
+            vertical-align: top;
+        }
+        &__prices{
+            width: auto;
+            position: relative;
+            margin-bottom: toRem(16);
+        }
+        &__button{
+            width: toRem(124);
+            &::before{
+                content: '';
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+        &__price{
+            &--bold{
+                font-size: toRem(20);
+                line-height: toRem(28);
+            }
+            &--discount{
+                font-size: toRem(14);
+                line-height: toRem(20);
+                position: absolute;
+                right: 100%;
+                margin-right: toRem(12);
+                bottom: 0;
+                white-space: nowrap;
+            }
+        }
+        &__discount{
+            top: toRem(16);
+            left: toRem(24);
+            font-size: toRem(14);
+            line-height: toRem(20);
+            padding: toRem(4) toRem(8);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+.villa-card{
+    &__photo{
+        img{
+            transition: 1s ease;
+            transition-property: opacity,transform;
+        }
+    }
+    &__photos{
+        .swiper-pagination{
+            transition: opacity 0.3s ease;
+        }
+        &:hover{
+            .swiper-pagination{
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.villas-cards{
+    &__toggle{
+        cursor: pointer;
+        transition: width 0.3s ease;
+        b{
+            transition: transform 0.3s;
+        }
+    }
+    &__toggle{
+        p,span{
+            transition: color 0.3s ease;
+        }
+    }
+    &__item{
+        transition: .7s ease;
+        transition-property: opacity,transform;
+        transition-delay: 0.3s;
+    }
+    &__tabs{
+        &.disabled{
+            pointer-events: none;
+            & *{
+                pointer-events: none!important;
+            }
+        }
+    }
+    &__tab{
+        transition:opacity 0.3s ease;
+        &.active{
+            .villas-cards{
+                &__item{
+                   
+                    @for $i from 1 through 10 {
+                        &:nth-child(#{$i}) {
+                            transition-delay: 0.3s + 0.05s*$i;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

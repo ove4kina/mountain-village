@@ -1,0 +1,173 @@
+.locations{
+    background-color: #fff;
+    &__text{
+        margin-bottom: toRemM(32);
+    }
+    &__map-wrapper{
+        background-color: $gray4;
+        height: 56.25vw;
+        max-height: toRemM(500);
+    }
+    &__map{
+        width: 100%;
+        height: 100%;
+    }
+    &__roads-wrapper{
+        pointer-events: none;
+        box-sizing: border-box;
+        padding-top: toRemM(30);
+        padding-bottom: toRemM(54);
+        width: 100%;
+    }
+    &__roads{
+        pointer-events: all;
+        background: #fff;
+    }
+    &__item{
+        &+.locations__item{
+            margin-top: toRemM(22);
+        }
+        &>span{
+            font-size: toRemM(14);
+            line-height: toRemM(20);
+            color: $gray1;
+            max-width: toRemM(280);
+            display: block;
+        }
+        p{
+            position: relative;
+            padding-left: toRemM(17);
+            margin-bottom: toRemM(10);
+            font-size: toRemM(16);
+            line-height: toRemM(22);
+            color: $primary;
+            &>span{
+                font-size: toRemM(16);
+                line-height: toRemM(22);
+                color: $green;
+                margin-left: toRemM(12);
+            }
+            &::before{
+                content: '';
+                width: toRemM(5);
+                height: toRemM(5);
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translate(0,-50%);
+                background: $green;
+            }
+        }
+    }
+    &__wrapper{
+        position: relative;
+    }
+    &--padding-top{
+        box-sizing: border-box;
+        padding-top: toRemM(56);
+    }
+    @media (min-width: 1200px){
+        &__text{
+            margin-bottom: toRem(96);
+        }
+        &__map-wrapper{
+            height: toRem(500);
+            max-height: toRem(500);
+        }
+        &__container{
+            position: relative;
+        }
+        &__scroller{
+            max-height: toRem(245);
+            &.limit-height{
+                height: toRem(245);
+            }
+        }
+        &__roads-wrapper{
+            padding: 0;
+            overflow: hidden;
+            position: absolute;
+            left: 0;
+            top: toRem(48);
+            width: 100%;
+        }
+        &__roads{
+            transition: transform .3s ease;
+            box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.04);
+            position: relative;
+            max-height: toRem(245);
+            width: toRem(375);
+            &::before{
+                content: '';
+                pointer-events: none;
+                z-index: 1;
+                position: absolute;
+                width: 100%;
+                height: toRem(55);
+                bottom: 0;
+                left: 0;
+                transform: rotate(180deg);
+                background: rgba(255,255,255,1);
+                background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+                background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(100%, rgba(255,255,255,0)));
+                background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+                background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+                background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+                background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0 );
+            }
+        }
+        &__item{
+            box-sizing: border-box;
+            padding: toRem(24);
+            &:nth-child(even){
+                background: $gray6;
+            }
+            &+.locations__item{
+                margin: 0;
+            }
+            &>span{
+                font-size: toRem(14);
+                line-height: toRem(20);
+                max-width: toRem(300);
+            }
+            p{
+                padding-left: toRem(18);
+                margin-bottom: toRem(12);
+                font-size: toRem(16);
+                line-height: toRem(22);
+                &>span{
+                    font-size: toRem(16);
+                    line-height: toRem(22);
+                    margin-left: toRem(12);
+                }
+                &::before{
+                    width: toRem(5);
+                    height: toRem(5);
+                }
+            }
+        }
+        &--padding-top{
+            padding-top: toRem(100);
+        }
+    }
+}
+
+.gm-style{
+    p{
+        font-size: toRem(14);
+        line-height: toRem(18);
+        color: $primary;
+        font-family: reg;
+    }
+    .gm-style-iw-t{
+        bottom: 30px!important;
+    }
+    .gm-style-iw-c{
+        border-radius: 0!important;
+        padding: 16px 6px 4px 22px !important;
+        button{
+            display: none!important;
+        }
+    }
+}

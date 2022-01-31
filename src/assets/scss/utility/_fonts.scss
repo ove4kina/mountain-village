@@ -1,0 +1,33 @@
+@mixin newFont($family,$pathName) {
+
+    @font-face {
+        font-family: '#{$family}';
+        src: url('/fonts/#{$pathName}.eot');
+        src: url('/fonts/#{$pathName}.eot?iefix') format('emdded-opentype'),
+             url('/fonts/#{$pathName}.woff2') format('woff2'),
+             url('/fonts/#{$pathName}.woff') format('woff'),
+             url('/fonts/#{$pathName}.ttf') format('truetype'),
+             url('/fonts/#{$pathName}.svg##{$pathName}') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+}
+
+@include newFont('reg','PTSans-Regular');
+@include newFont('bold','PTSans-Bold');
+@include newFont('italic','PTSans-Italic');
+@include newFont('serif-reg','PTSerif-Regular');
+@include newFont('serif-bold','PTSerif-Bold');
+
+@font-face {
+     font-family: 'icon';
+     src:  url('/fonts/icomoon.eot?nvr12d');
+     src:  url('/fonts/icomoon.eot?nvr12d#iefix') format('embedded-opentype'),
+     url('/fonts/icomoon.ttf?nvr12d') format('truetype'),
+     url('/fonts/icomoon.woff?nvr12d') format('woff'),
+     url('/fonts/icomoon.svg?nvr12d#icomoon') format('svg');
+     font-weight: normal;
+     font-style: normal;
+ }
+

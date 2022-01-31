@@ -1,0 +1,214 @@
+.tabs{
+    &__slider{
+        transition: .3s ease;
+        transition-property: width, transform;
+    }
+    &__item{
+        transition: color .3s ease;
+    }
+}
+.button{
+    &.disabled{
+        pointer-events: none;
+        background-color: $gray4;
+        color: $gray3;
+    }
+}
+.input{
+    input{
+        transition: .3s ease;
+        transition-property: border-color, background-color;
+        &::-webkit-input-placeholder {
+            transition: color .3s ease;
+        }
+        &::-moz-placeholder {
+            transition: color .3s ease;
+        }
+        &:-ms-input-placeholder {
+            transition: color .3s ease;
+        }
+        &:-moz-placeholder {
+            transition: color .3s ease;
+        }
+    }
+    &--gray{
+        &.error{
+            input{
+                border-color: $error;
+            }
+        }
+        &.disabled{
+            pointer-events: none;
+            input{
+                border-color: transparent;
+                background-color: $gray6;
+                &::-webkit-input-placeholder {
+                    color: $gray3;
+                }
+                &::-moz-placeholder {
+                    color: $gray3;
+                }
+                &:-ms-input-placeholder {
+                    color: $gray3;
+                }
+                &:-moz-placeholder {
+                    color: $gray3;
+                }
+            }
+        }
+        &.focus{
+            input {
+                border-color: $gray3;
+                background-color: #fff;
+                &::-webkit-input-placeholder {
+                    color: $gray4;
+                }
+                &::-moz-placeholder {
+                    color: $gray4;
+                }
+                &:-ms-input-placeholder {
+                    color: $gray4;
+                }
+                &:-moz-placeholder {
+                    color: $gray4;
+                }
+            }
+        }
+    }
+    &--transparent{
+        &.focus{
+            input {
+                border-color: $gray3;
+                &::-webkit-input-placeholder {
+                    color: $gray2;
+                }
+                &::-moz-placeholder {
+                    color: $gray2;
+                }
+                &:-ms-input-placeholder {
+                    color: $gray2;
+                }
+                &:-moz-placeholder {
+                    color: $gray2;
+                }
+            }
+        }
+    }
+}
+.form-section{
+    &__body,&__response{
+        transition: opacity .3s ease;
+    }
+    &__response{
+        transition-delay: .3s;
+    }
+}
+@media (min-width: 1200px) {
+    .slider-card{
+        transition: background .3s ease;
+        &__bottom{
+            transition: padding .3s ease;
+        }
+        &:hover{
+            background: $gray6;
+            .slider-card{
+                &__bottom{
+                    padding-left: toRem(24);
+                    padding-right: toRem(24);
+                }
+            }
+        }
+        &__image{
+            &::before{
+                transition: opacity 0.3s ease;
+            }
+            &:hover{
+                &::before{
+                    opacity: 0!important;
+                }
+            }
+        }
+    }
+    .button{
+        &--yellow{
+            transition: background-color .3s ease;
+            &:hover{
+                background-color: #FEDD31;
+            }
+        }
+        &--green{
+            transition: background-color .3s ease;
+            &:hover{
+                background-color: #54B86B;
+            }
+        }
+        &--transparent,&--border-grey{
+            transition: .3s ease;
+            transition-property: background-color, border-color,color;
+            &:hover{
+                border-color: $green;
+                background-color: $green;
+                color: #fff;
+            }
+        }
+    }
+    .input{
+        &--gray{
+            &:hover{
+                input{
+                    border-color: $gray3;
+                }
+            }
+        }
+        &--transparent{
+            &:hover{
+                input{
+                    border-color: $gray3;
+                }
+            }
+        }
+    }
+}
+
+//buttons active
+.button{
+    &--yellow{
+        transition: background-color .15s ease;
+        &:active{
+            background-color: #FDCE2A;
+        }
+    }
+    &--green{
+        transition: background-color .15s ease;
+        &:active{
+            background-color: #4EA161;
+        }
+    }
+    &--transparent,&--border-grey{
+        transition: .15s ease;
+        transition-property: background-color, border-color;
+        &:active{
+            border-color: #4EA161;
+            background-color: #4EA161;
+        }
+    }
+}
+
+.toggles{
+    &__item{
+        cursor: pointer;
+        transition: width 0.3s ease;
+        will-change: width;
+        b{
+            transition:transform 0.15s ease, opacity 0.3s ease;
+        }
+        p,span{
+            transition: color 0.3s ease;
+        }
+    }
+    &.hide-lines{
+        b{
+            transition:transform 0.15s ease, opacity 0.15s ease;
+        }
+    }
+}

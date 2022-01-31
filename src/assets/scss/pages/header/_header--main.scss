@@ -1,0 +1,134 @@
+.header{
+    &__hamburger{
+        cursor: pointer;
+        span{
+            transition: transform 0.3s ease;
+        }
+        &.active{
+            span{
+                &:nth-child(1){
+                    transform: translate(-50%, -50%) translateY(0) rotate(45deg);
+                }
+                &:nth-child(2){
+                    transform: translate(-50%, -50%) translateY(0) rotate(-45deg);
+                }
+            }
+        }
+    }
+    &__sidebar{
+        transition: transform 0.3s ease;
+        
+       
+    }
+    &__container{
+        &::before{
+            transition: opacity 0.3s ease;
+        }
+        &.overscrolled{
+            &::before{
+                opacity: 0.1;
+            }
+        }
+    }
+    .vb-dragger{
+        opacity: 0;
+    }
+    &.show-sidebar{
+        &::before{
+            opacity: 1;
+            pointer-events: all;
+        }
+        .sidebar{
+            transform: translate(0,0);
+            @media (min-width: 1200px) {
+                transform: translate(100%,0);
+                &__navigation{
+                    opacity: 1;
+                    pointer-events: all;
+                }
+                &__buttons{
+                    opacity: 1;
+                    pointer-events: all;
+                }
+                &__bottom{
+                    &.active{
+                        &::before{
+                            opacity: 0.1;
+                        }
+                    }
+                }
+            }
+        }
+        .vb-dragger{
+            opacity: 1;
+        }
+    }
+    @media (min-width: 1200px) {
+        &::before{
+            transition: opacity 0.3s ease;
+        }
+    }
+}
+
+.sidebar{
+    user-select: none;
+    &.show-sub-list{
+        .sidebar{
+            &__item{
+                & > a{
+                    color: $gray2;
+                }
+            }
+            &__list{
+                display: block;
+            }
+        }
+    }
+    &__toggle{
+        cursor: pointer;
+    }
+    
+    &__item{
+        a{
+            transition: color 0.3s ease;
+        }
+    }
+    @media (min-width: 1200px) {
+        &__background{
+            transition: opacity 0.5s ease;
+        }
+        &__sub-item{
+            &::before{
+                transition: transform 0.5s ease;
+            }
+            p{
+                transition: color 0.5s ease;
+            }
+            &:hover{
+                &::before{
+                    transform: translate(-50%, -50%) translateX(0);
+                }
+                .sidebar{
+                    &__background{
+                        opacity: 1;
+                        
+                    }
+                }
+                p{
+                    color: #fff;
+                }
+            }
+        }
+        &__navigation{
+            transition:opacity 0.3s ease;
+        }
+        &__buttons{
+            transition:opacity 0.3s ease;
+        }
+        &__bottom{
+            &::before{
+                transition: opacity 0.3s ease;
+            }
+        }
+    }
+}

@@ -1,0 +1,97 @@
+.benefits{
+    padding-top: toRemM(48);
+    padding-bottom: toRemM(72);
+    background: #ffffff;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    &--more-padding{
+        padding-top: 0;
+    }
+    @media (min-width: 1200px) {
+        padding-top: toRem(96);
+        padding-bottom: toRem(160);
+        &--more-padding{
+            padding: 0;
+        }
+    }
+}
+
+.benefit{
+    &__image{
+        width: span(1.5 of 4);
+        margin-bottom: -(toRemM(19));
+        img{
+            width: 100%;
+        }
+    }
+    &__text{
+        padding-left: span(0.5 of 4);
+        padding-right: span(0.35 of 4);
+        color: $gray0;
+        p{
+            font-size: toRemM(16);
+            line-height: toRemM(22);
+            &.bold{
+                font-family: bold;
+                font-size: toRemM(18);
+                line-height: toRemM(24);
+                margin-bottom: toRemM(12);
+            }
+        }
+        span{
+            font-size: toRemM(40);
+            line-height: 1.04;
+            margin-bottom: toRemM(12);
+            font-family: serif-bold;
+            display: block;
+        }
+    }
+    @media (min-width: 1200px) {
+        white-space: normal;
+        &__image{
+            width: toRem(190);
+            margin-bottom: -(toRem(41));
+        }
+        &__text{
+            padding: 0;
+            max-width: toRem(250);
+            p{
+                font-size: toRem(16);
+                line-height: toRem(22);
+                &.bold{
+                    font-size: toRem(20);
+                    line-height: toRem(28);
+                    margin-bottom: toRem(12);
+                }
+            }
+            span{
+                font-size: toRem(64);
+                line-height: 1.02;
+                margin-bottom: toRem(24);
+            }
+        }
+    }
+}
+
+
+.benefits-list{
+    &__item{
+        & + &{
+            margin-top: toRemM(40);
+        }
+    }
+    @media (min-width: 1200px) {
+        font-size: 0;
+        white-space: nowrap;
+        padding: 0 span(1 of 12);
+        &__item{
+            width: span(4 of 10);
+            display: inline-block;
+            vertical-align: top;
+            & + &{
+                margin-top: 0;
+            }
+        }
+    }
+}

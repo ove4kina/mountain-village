@@ -1,0 +1,95 @@
+.comfort{
+    padding-top: toRemM(24);
+    padding-bottom: toRemM(160);
+    box-sizing: border-box;
+    min-height: 100vh;
+    &__title{
+        margin-bottom: toRemM(20);
+    }
+    &__wrapper{
+        max-width: toRemM(450);
+    }
+    &__top,&__bottom{
+        display: inline-block;
+        vertical-align: middle;
+    }
+    &__top{
+        margin-right: toRemM(50);
+    }
+    &__button{
+        margin-bottom: toRemM(40);
+        width: 100%;
+        text-align: center;
+        max-width: toRemM(400);
+    }
+    &__benefits{
+        white-space: nowrap;
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+        margin: toRemM(10) -7% toRemM(32);
+        padding: 0 7%;
+    }
+    &__benefit{
+        display: inline-block;
+        vertical-align: top;
+        width: toRemM(155);
+        &+.comfort__benefit{
+            margin-left: toRemM(50);
+        }
+        img{
+            display: block;
+            width: 100%;
+            margin-bottom: toRemM(4);
+        }
+        p{
+            color: #000;
+            font-size: toRemM(20);
+            line-height: toRemM(28);
+            white-space: nowrap;
+        }
+    }
+    @media (min-width: 900px) {
+        &__top,&__bottom{
+            display: block;
+        }
+        &__top{
+            margin-bottom: toRemM(24);
+            margin-right: 0;
+        }
+        &__benefits{
+            white-space: normal;
+            overflow: visible;
+            margin: toRemM(10) 0 toRemM(32);
+            padding: 0;
+        }
+    }
+    @media (min-width: 1200px) {
+        padding-top: toRem(48);
+        padding-bottom: toRem(200);
+        &__wrapper{
+            max-width: toRem(600);
+        }
+        &__top{
+            margin-bottom: toRem(24);
+        }
+        &__button{
+            display: none;
+        }
+        &__benefits{
+            margin: toRem(30) 0 toRem(40);
+        }
+        &__benefit{
+            width: toRem(155);
+            &+.comfort__benefit{
+                margin-left: toRem(85);
+            }
+            img{
+                margin-bottom: toRem(4);
+            }
+            p{
+                font-size: toRem(20);
+                line-height: toRem(28);
+            }
+        }
+    }
+}

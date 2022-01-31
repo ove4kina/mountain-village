@@ -1,0 +1,80 @@
+.container{
+    box-sizing: border-box;
+    padding: 0 6.25%;
+    margin: 0 auto;
+    @media (min-width: 1200px) {
+        padding: 0 toRem(95);
+    }
+    @media (min-width: 1440px) {
+        max-width: 1200px;
+    }
+    @media (min-width: 1550px) {
+        max-width: 1400px;
+    }
+    @media (min-width: 1800px) {
+        max-width: 1580px;
+        padding: 0;
+    }
+}
+
+
+
+body {
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    font-family: reg;
+    background-color: #fff; //-webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    min-width: 320px;
+}
+html{
+    @media (max-width: 1199px) {
+        font-size: 16px!important;
+    }
+    @media(min-width: 1200px){
+        font-size: -webkit-calc((100vw + 1px - 1px)/100);
+        font-size: expression((100vw + 1px - 1px)/100);
+        font-size: -moz-calc((100vw + 1px - 1px)/100);
+        font-size: -o-calc((100vw + 1px - 1px)/100);
+        font-size: calc((100vw + 1px - 1px)/100);
+    }
+    @media(min-width: 1440px){
+        font-size: 13px;
+    }
+    @media(min-width: 1600px){
+        font-size: 14px;
+    }
+    @media(min-width: 1800px){
+        font-size: 15px;
+    }
+}
+
+
+
+.button {
+    border: none;
+    cursor: pointer;
+    font-family: 'reg';
+    background: none;
+    padding: 0;
+}
+
+*:focus {
+    outline: none;
+}
+
+.text {
+    &>*+* {
+        margin-top: 15px;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+.ymap-container,.vue-google-map,.map-view {
+    height: 100%;
+    width: 100%;
+}

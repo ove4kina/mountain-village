@@ -1,0 +1,314 @@
+.contact-form{
+    padding-top: toRemM(72);
+    overflow: hidden;
+    background: #fff;
+    &__title{
+        margin-bottom: toRemM(20);
+        h3{
+            width: 100%;
+        }
+    }
+    &__container{
+        position: relative;
+    }
+    &__text{
+        max-width: toRemM(480);
+        font-size: toRemM(16);
+        line-height: toRemM(20);
+        color: $gray1;
+    }
+    &__person{
+        margin-top: toRemM(45);
+        padding-left: toRemM(80);
+        margin-bottom: toRemM(30);
+        position: relative;
+        span{
+            display: block;
+            font-size: toRemM(14);
+            line-height: toRemM(20);
+            color: $gray1;
+        }
+        p{
+            font-size: toRemM(28);
+            line-height: toRemM(34);
+            color: #000;
+        }
+    }
+    &__image{
+        overflow: hidden;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(0,-50%);
+        height: toRemM(64);
+        width: toRemM(64);
+        border-radius: 50%;
+        img{
+            position: absolute;
+            min-width: 100%;
+            min-height: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 100%;
+        }
+    }
+    &__email{
+        margin-top: toRemM(24);
+    }
+    &__email,&__phone{
+        a{
+            display: block;
+            font-size: toRemM(20);
+            line-height: toRemM(28);
+            color: #000;
+            margin-bottom: toRemM(4);
+        }
+        span{
+            display: block;
+            max-width: toRemM(240);
+            color: rgba($gray2, 0.6);
+            font-size: toRemM(14);
+            line-height: toRemM(20);
+        }
+    }
+    &__wrapper{
+        margin: toRemM(40) -7% 0;
+    }
+    &__form{
+        position: relative;
+        max-width: toRemM(430);
+        margin: 0 auto;
+        background: $gray6;
+        box-sizing: border-box;
+        padding: toRemM(32) toRemM(20) toRemM(40);
+        p{
+            font-size: toRemM(20);
+            line-height: toRemM(28);
+            color: $primary;
+            margin-bottom: toRemM(20);
+        }
+    }
+    &__body{
+        img{
+            width: toRemM(140);
+            height: toRemM(125);
+            position: absolute;
+            right: 0;
+            top: -(toRemM(45));
+            transform: matrix(-0.91, -0.42, -0.42, 0.91, 0, 0);
+        }
+    }
+    &__input{
+        input{
+            text-align: center;
+        }
+        &+.contact-form__input{
+            margin-top: toRemM(12);
+        }
+    }
+    &__button{
+        text-align: center;
+        width: 100%;
+        margin-top: toRemM(12);
+    }
+    &__body, &__response {
+        transition: opacity .3s ease;
+    }
+    &__response{
+        transition-delay: .3s;
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 100%;
+        text-align: center;
+        img{
+            width: toRemM(190);
+            height: toRemM(190);
+            display: inline-block;
+            margin-bottom: toRemM(8);
+            transform: rotate(-166.03deg);
+        }
+        p{
+            font-size: toRemM(24);
+            line-height: toRemM(28);
+            margin-bottom: toRemM(12);
+            color: $gray1;
+            font-family: bold;
+        }
+        span{
+            font-size: toRemM(20);
+            line-height: toRemM(28);
+            color: $gray2;
+        }
+    }
+    &__prompt{
+        margin-top: toRemM(8);
+        font-size: toRemM(10);
+        line-height: toRemM(14);
+        max-width: toRemM(280);
+        color: rgba($gray2, 0.5);
+    }
+    &.send{
+        .contact-form{
+            &__body{
+                opacity: 0;
+                pointer-events: none;
+            }
+            &__response{
+                opacity: 1;
+                pointer-events: all;
+            }
+        }
+    }
+    @media (min-width: 1090px) {
+        padding-top: toRemM(120);
+        padding-bottom: toRemM(128);
+        border-bottom: 1px solid $gray4;
+        &__form{
+            background: #fff;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+            position: absolute;
+            right: 4%;
+            top: 0;
+            width: toRemM(430);
+            padding: toRemM(40) toRemM(35);
+            @media (min-width: 1840px) {
+                right: 0;
+            }
+        }
+        &__body{
+            img{
+                top: -(toRemM(70));
+                width: toRemM(200);
+                height: toRemM(177);
+                transform: rotate(39.2deg);
+            }
+        }
+        &__email{
+            margin-top: 0;
+            margin-left: toRemM(24);
+        }
+        &__email,&__phone{
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
+    @media (min-width: 1200px) {
+        padding-top: toRem(120);
+        padding-bottom: toRem(128);
+        &__title{
+            margin-bottom: toRem(32);
+        }
+        &__text{
+            max-width: toRem(600);
+            font-size: toRem(20);
+            line-height: toRem(28);
+        }
+        &__wrapper{
+            margin: 0;
+        }
+        &__person{
+            margin-top: toRem(40);
+            padding-left: toRem(80);
+            margin-bottom: toRem(30);
+            span{
+                font-size: toRem(14);
+                line-height: toRem(20);
+            }
+            p{
+                font-size: toRem(28);
+                line-height: toRem(34);
+            }
+        }
+        &__image{
+            height: toRem(64);
+            width: toRem(64);
+        }
+        &__email{
+            margin-left: toRem(24);
+        }
+        &__email,&__phone{
+            a{
+                font-size: toRem(24);
+                line-height: toRem(34);
+                margin-bottom: toRem(4);
+            }
+            span{
+                max-width: toRem(240);
+                font-size: toRem(14);
+                line-height: toRem(20);
+            }
+        }
+        &__form{
+            max-width: toRem(430);
+            width: toRem(430);
+            padding: toRem(40) toRem(35);
+            p{
+                font-size: toRem(24);
+                line-height: toRem(28);
+                margin-bottom: toRem(24);
+                font-family: bold;
+            }
+        }
+        &__body{
+            img{
+                top: -(toRem(70));
+                width: toRem(200);
+                height: toRem(177);
+            }
+        }
+        &__input{
+            input{
+                text-align: left;
+            }
+            &+.contact-form__input{
+                margin-top: toRem(12);
+            }
+        }
+        &__button{
+            margin-top: toRem(20);
+        }
+        &__response{
+            img{
+                width: toRem(190);
+                height: toRem(190);
+                margin-bottom: toRem(8);
+            }
+            p{
+                font-size: toRem(24);
+                line-height: toRem(28);
+                margin-bottom: toRem(12);
+            }
+            span{
+                font-size: toRem(20);
+                line-height: toRem(28);
+            }
+        }
+        &__prompt{
+            max-width: toRem(280);
+            margin-top: toRem(8);
+            font-size: toRem(10);
+            line-height: toRem(14);
+        }
+    }
+    @media (min-width: 1440px) and (max-width: 1550px){
+        &__content{
+            max-width: 500px;
+        }
+        &__contacts{
+            white-space: nowrap;
+            a,span{
+                white-space: normal;
+            }
+        }
+        &__phone{
+            span{
+                max-width: 14rem;
+            }
+        }
+    }
+}
